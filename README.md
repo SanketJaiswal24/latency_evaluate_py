@@ -13,13 +13,13 @@ And this script will also work for nonstatus response codes but currently I don'
 ## Steps to run the script
 
 1. To run this same script in your environment you need to change the csv file env path only.
-`def create_csv_file(result):
+```
+def create_csv_file(result):
     with open('<env_path>/https_response.csv','w',newline='') as f:
         thewriter = csv.writer(f)
         thewriter.writerow(['Website URL','Status Code','Response Time'])
-
-        for k in result:
-           thewriter.writerow([list(k[1])[0],list(k[1])[1],k[0]])`
+```
 
 2. Run python script
+
 `python3 response_sort.py`
