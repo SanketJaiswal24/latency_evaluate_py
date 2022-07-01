@@ -1,7 +1,5 @@
-# latency_evaluate_py
+# Python Script Workflow
 This Python script is responsible for sending HTTPS requests to 100 URLs and getting the response time It will also sort URLs based on lowest response time. In the end, It will also store URLs, Status Codes, and Response Time on CSV file.
-
-Python Script Workflow
 
 1. First I have created an array of website URLs and I’m taking 4 website URL examples with a multiplication of 25 to convert this list into 100 URL lists.
 2. I have initialized two empty dictionaries to store the results of Website URL, Response Time, and Status code and I have chosen the python dictionary      because it stores the value in key formate. Key = Response Time, Value = WebsiteURL, Status code.
@@ -12,5 +10,16 @@ Python Script Workflow
 
 And this script will also work for nonstatus response codes but currently I don't have any URL that returns 404 or 500 status codes.
 
-To run this same script in your environment you need to change the csv file path only -> open('<path>/resultponse.csv','w',newline='')
+## Steps to run the script
 
+1. To run this same script in your environment you need to change the csv file env path only.
+`def create_csv_file(result):
+    with open('<env_path>/https_response.csv','w',newline='') as f:
+        thewriter = csv.writer(f)
+        thewriter.writerow(['Website URL','Status Code','Response Time'])
+
+        for k in result:
+           thewriter.writerow([list(k[1])[0],list(k[1])[1],k[0]])`
+
+2. Run python script
+`python3 response_sort.py`
